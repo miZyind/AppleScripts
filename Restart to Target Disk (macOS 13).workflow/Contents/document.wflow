@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AMApplicationBuild</key>
+	<string>520</string>
+	<key>AMApplicationVersion</key>
+	<string>2.10</string>
+	<key>AMDocumentVersion</key>
+	<string>2</string>
+	<key>actions</key>
+	<array>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.object</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>1.0.2</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>source</key>
+					<dict/>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.object</string>
+					</array>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Run AppleScript.action</string>
+				<key>ActionName</key>
+				<string>Run AppleScript</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>source</key>
+					<string>-- The name of the BOOTCAMP partition in your disk selectorset TARGET to "Windows"-- The explicit path to cliclick.set CLI to "/usr/local/bin/cliclick"-- Your password that can authorize an elevated requestset PWD to "YOUR_PASSWORD"do shell script "open x-apple.systempreferences:com.apple.preference.startupdisk"tell application "System Events" to tell process "System Settings"	repeat		if exists window "Startup Disk" then exit repeat	end repeat		tell window "Startup Disk"		set ROOT to group 1 of scroll area 1 of group 1 of group 1 of group 2 of splitter group 1 of group 1				repeat with system in every group of list 1 of scroll area 1 of ROOT			if value of static text 2 of system = TARGET then				set p to position of system				set s to size of system				set X to ((item 1 of p) + (item 1 of s) / 2) as integer				set Y to ((item 2 of p) + (item 2 of s) / 2) as integer				do shell script CLI &amp; " c:" &amp; X &amp; "," &amp; Y			end if		end repeat				tell application "System Events" to tell process "SecurityAgent"			repeat				if exists window "Untitled" then exit repeat			end repeat						tell window "Untitled"				click button "Use Password…"								repeat					if exists text field 2 then exit repeat				end repeat								set value of text field 2 to PWD				click button "Unlock"			end tell		end tell				click button "Restart…" of ROOT				repeat			if exists sheet 1 then exit repeat		end repeat				click button "Restart" of sheet 1	end tellend tell</string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.RunScript</string>
+				<key>CFBundleVersion</key>
+				<string>1.0.2</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>RunScriptAction</string>
+				<key>InputUUID</key>
+				<string>ACC7B8D9-BCBD-453C-BDE3-46EE600BB8FE</string>
+				<key>Keywords</key>
+				<array>
+					<string>Run</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>76DFB58D-BFFC-45CA-8ADE-E12D72125083</string>
+				<key>UUID</key>
+				<string>D8924673-09EF-4C98-A571-19C6AEA7814B</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<string>on run {input, parameters}
+	
+	(* Your script goes here *)
+	
+	return input
+end run</string>
+						<key>name</key>
+						<string>source</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+				</dict>
+				<key>conversionLabel</key>
+				<integer>0</integer>
+				<key>isViewVisible</key>
+				<integer>1</integer>
+				<key>location</key>
+				<string>705.000000:247.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>connectors</key>
+	<dict/>
+	<key>workflowMetaData</key>
+	<dict>
+		<key>workflowTypeIdentifier</key>
+		<string>com.apple.Automator.workflow</string>
+	</dict>
+</dict>
+</plist>
