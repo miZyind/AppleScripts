@@ -1,8 +1,8 @@
 # miZyind's AppleScripts
 
 [![AppleScript](https://img.shields.io/badge/2.10-000000?style=for-the-badge&label=&logo=apple&logoColor=fff)](https://developer.apple.com/library/archive/documentation/AppleScript/Conceptual/AppleScriptLangGuide/introduction/ASLR_intro.html)
-[![macOS](https://img.shields.io/badge/Monterey-000000?style=for-the-badge&label=&logo=macos&logoColor=fff)](https://www.apple.com/macos/monterey)
-[![macOS](https://img.shields.io/badge/Ventura-000000?style=for-the-badge&label=&logo=macos&logoColor=fff)](https://www.apple.com/macos/ventura)
+[![macOS](https://img.shields.io/badge/Monterey-000000?style=for-the-badge&label=&logo=macos&logoColor=fff)](https://en.wikipedia.org/wiki/MacOS_Monterey)
+[![macOS](https://img.shields.io/badge/Ventura-000000?style=for-the-badge&label=&logo=macos&logoColor=fff)](https://en.wikipedia.org/wiki/MacOS_Ventura)
 
 ## 🔮 Usage
 
